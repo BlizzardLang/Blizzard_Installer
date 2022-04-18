@@ -1,6 +1,5 @@
 ﻿using System;
 using System.CommandLine;
-using System.Runtime.InteropServices;
 
 namespace Blizzard.Installer;
 
@@ -18,7 +17,7 @@ internal static class CommandLineHandler
         rootCommand.Add(verbose);
 
         // Set the handler for the command line
-        rootCommand.SetHandler((string currentVersion, string targetVersion, Architecture architecture, bool verbose) =>
+        rootCommand.SetHandler((string currentVersion, string targetVersion, bool verbose) =>
         {
             var installer = new BlizzardInstaller(Version.Parse(currentVersion), verbose);
             if (targetVersion == "latest")
@@ -44,7 +43,8 @@ internal static class CommandLineHandler
 
     private static readonly Option<string> currentVersion = new(
         aliases: new[] { "--current" },
-        description: "The current Blizzard version."
+        description: "The current Blizzard version.",
+        getDefaultValue: () => "0.0.0" // No version check by default
     );
 
     private static readonly Option<string> targetVersion = new(

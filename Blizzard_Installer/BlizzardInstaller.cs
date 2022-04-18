@@ -8,8 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Blizzard.Installer;
 
-// TODO: Add an uninstall feature
-
 public class BlizzardInstaller
 {
     /// <summary>
@@ -164,7 +162,7 @@ public class BlizzardInstaller
                 }
                 else
                 {
-                    Console.WriteLine($"There was an error extracting file {archive}\nTry running the command with verbose mode enabled.");
+                    Console.WriteLine($"There was an error extracting file {targetZipFile}\nTry running the command with verbose mode enabled to see the problem.");
                 }
 #endif
             }

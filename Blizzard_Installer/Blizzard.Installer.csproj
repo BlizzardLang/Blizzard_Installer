@@ -18,6 +18,7 @@
     <PackageIcon>Blizzard_Installer_Icon_128x128.png</PackageIcon>
     <ApplicationIcon>Blizzard_Installer_Icon_128x128.ico</ApplicationIcon>
     <AssemblyName>$(MSBuildProjectName.Replace(".", ""))</AssemblyName>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
