@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <Company>BLM16</Company>
+    <Authors>BLM16</Authors>
+    <Copyright>Copyright (c) 2022 Bradley Myers. All rights reserved.</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/BlizzardLang/Blizzard</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>blizzard; language; installer</PackageTags>
+    <Description>The installer and version manager for the Blizzard Programming Language.</Description>
+    <PackageId>BLM16.Lang.$(AssemblyName)</PackageId>
+    <PackageLicenseFile>..\LICENSE</PackageLicenseFile>
+    <PackageIcon>Blizzard_Installer_Icon_128x128.png</PackageIcon>
+    <ApplicationIcon>Blizzard_Installer_Icon_128x128.ico</ApplicationIcon>
+    <AssemblyName>$(MSBuildProjectName.Replace(".", ""))</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Blizzard_Installer_Icon_128x128.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\assets\Blizzard_Installer_Icon_128x128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta3.22114.1" />
+  </ItemGroup>
+
+</Project>
